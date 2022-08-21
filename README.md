@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+run steps
 
-Things you may want to cover:
+- cp database.yml.example database.yml
+- rake db:create
+- rake db:migrate
+- rails s
 
-* Ruby version
+Functional:
 
-* System dependencies
+- User.create_user(email, pass) for create user and account
 
-* Configuration
+- User.add_deposite(id, amount) for invest money to account *amount has bigdecimal format u could use 2 symbols after . for example '155.55'
+  without condition who deposite to user , he deposite himself :)
 
-* Database creation
+transfer operations allow in application non console mode from ui
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
