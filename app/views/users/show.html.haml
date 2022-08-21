@@ -1,0 +1,20 @@
+%h1= "Hello, #{current_user.email}"
+
+= link_to 'send money', new_transaction_path
+
+Transactions history
+%table
+  %thead
+    %tr
+      %th{scope: "col"} From
+      %th{scope: "col"} To
+      %th{scope: "col"} Amount
+      %th{scope: "col"} Details
+
+  %tbody
+    - @transactions.each do |transaction|
+      %tr
+        %td= transaction.from.user.email
+        %td= transaction.to.user.email
+        %td= transaction.amount
+        %td= link_to 'more info', transaction_path(id: transaction.id)

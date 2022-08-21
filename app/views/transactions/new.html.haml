@@ -1,0 +1,10 @@
+Send money
+
+= form_tag({:action => "create"}) do
+  Amount
+  = number_field 'transaction', 'amount', step: 0.01
+  %br
+  Currency
+  = select_tag "transaction[to_id]", options_for_select(@users)
+  %br
+  = submit_tag "Send"
